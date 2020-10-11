@@ -115,6 +115,6 @@ docker run -d --restart=unless-stopped \
 3. loggin wechat
 
 ```shell
-docker log efb
+docker logs efb
 ```
 
