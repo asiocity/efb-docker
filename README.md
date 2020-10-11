@@ -112,7 +112,7 @@ docker run -d --restart=unless-stopped \
     efb:latest
 ```
 
-3. loggin wechat
+3. login wechat
 
 ```shell
 docker logs efb
