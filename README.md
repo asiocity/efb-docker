@@ -20,7 +20,7 @@ docker build -t efb:latest .
 
 ## usage
 
-1. create efb configure folders and files
+### 1. create efb configure folders and files
 
 ```
 /path/to/efb/config/
@@ -94,16 +94,16 @@ services:
         restart: unless-stopped
 ```
 
-2. start a efb docker container
+### 2. start a efb docker container
 
-1.1 use docker-compose
+#### 2.1 use docker-compose
 
 ```shell
 cd /path/to/efb/config/
 docker-compose up -d
 ```
 
-1.2 manual
+#### 2.2 manual
 
 ```shell
 docker run -d --restart=unless-stopped \
@@ -112,7 +112,7 @@ docker run -d --restart=unless-stopped \
     efb:latest
 ```
 
-3. login wechat
+### 3. login wechat
 
 ```shell
 docker logs efb
