@@ -2,7 +2,7 @@
 
 A unofficial docker image for https://github.com/blueset/ehForwarderBot
 
-this image only support wechat-\>telegram.
+this image only support wechat\<-\>telegram.
 
 ## build image
 
@@ -71,27 +71,39 @@ admins:
 # This section can be used to toggle experimental functionality.
 # These features may be changed or removed at any time.
 # Options in this section is explained afterward.
-# flags:
-#     option_one: 10
-#     option_two: false
-#     option_three: "foobar"
+flags:
+  message_muted_on_slave: mute
 
 # [Network Configurations]
 # [RPC Interface]
 # Refer to relevant sections afterwards for details.
+# [Proxy]
+request_kwargs:
+  # HTTP proxy
+  #proxy_url: http://172.18.0.1:8118
+  # Optional, if you need authentication:
+  #username: PROXY_USER
+  #password: PROXY_PASS
+  # SOCKS5 proxy
+  #proxy_url: socks5://172.18.0.1:1080
+  # Optional, if you need authentication:
+  #urllib3_proxy_kwargs:
+  #  username: PROXY_USER
+  #  password: PROXY_PASS
+
 ```
 
 /path/to/efb/config/docker-compose.yml
 
 ```yaml
-version: '2' 
-services:                                                                                      
-    efb:
-        image: efb 
-        container_name: efb 
-        volumes:
-        - /path/to/efb/config/:/root/.ehforwarderbot/profiles/default/ 
-        restart: unless-stopped
+version: '3' 
+services:
+  efb:
+    image: efb 
+    container_name: efb 
+    volumes:
+    - /path/to/efb/config/:/root/.ehforwarderbot/profiles/default/ 
+    restart: unless-stopped
 ```
 
 ### 2. start a efb docker container
