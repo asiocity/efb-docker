@@ -16,6 +16,9 @@ build efb image
 
 ```shell
 docker build -t efb:latest .
+
+# build with proxy
+docker build -t efb:latest . --no-cache --network host --build-arg HTTP_PROXY=http://127.0.0.1:8118 --build-arg HTTPS_PROXY=http://127.0.0.1:8118
 ```
 
 ## usage
@@ -90,7 +93,6 @@ request_kwargs:
   #urllib3_proxy_kwargs:
   #  username: PROXY_USER
   #  password: PROXY_PASS
-
 ```
 
 /path/to/efb/config/docker-compose.yml
