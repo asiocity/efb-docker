@@ -10,6 +10,7 @@ RUN set -ex \
         py3-wheel                                  \
         py3-ruamel.yaml                            \
         py3-pillow                                 \
+        py3-urllib3                                \
         #py3-cryptography                           \
         ffmpeg                                     \
         libmagic                                   \
