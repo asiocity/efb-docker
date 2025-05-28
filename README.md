@@ -15,10 +15,10 @@ git clone https://github.com/asiocity/efb-docker.git && cd efb-docker
 build efb image
 
 ```shell
-docker build -t efb:latest .
+docker build --build-arg CACHEBUST=$(date +%s) -t efb:latest .
 
 # build with proxy
-docker build -t efb:latest . --no-cache --network host --build-arg HTTP_PROXY=http://127.0.0.1:8118 --build-arg HTTPS_PROXY=http://127.0.0.1:8118
+docker build --build-arg CACHEBUST=$(date +%s) -t efb:latest --network host --build-arg HTTP_PROXY=http://127.0.0.1:8118 --build-arg HTTPS_PROXY=http://127.0.0.1:8118 .
 ```
 
 ## usage
